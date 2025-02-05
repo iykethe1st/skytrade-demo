@@ -12,7 +12,7 @@ import UserService from "@/services/UserService";
 import useInitAuth from "@/hooks/useInitAuth";
 
 export default function Home() {
-  // useInitAuth();
+  useInitAuth();
   const { loginWithRedirect } = useAuth0();
   const [isNewsletterChecked, setIsNewsletterChecked] = useState(false);
   const [isLogin, setIsLogin] = useState(true);
