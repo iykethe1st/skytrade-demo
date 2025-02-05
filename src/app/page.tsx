@@ -2,10 +2,10 @@
 import Image from "next/image";
 import { useAuth0 } from "@auth0/auth0-react";
 import AuthForm from "@/components/AuthForm";
-import { useContext, useEffect, useState } from "react";
+import { Suspense, useContext, useEffect, useState } from "react";
 import useSFAAuthCheck from "@/hooks/useSFAAuthCheck";
 import { decodeToken } from "@web3auth/single-factor-auth";
-import { useParams, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { Web3authContext } from "@/providers/web3authProvider";
 import { toast } from "react-toastify";
 import UserService from "@/services/UserService";
@@ -75,16 +75,18 @@ export default function Home() {
   }, [web3auth?.status]);
 
   return (
-    <div className="flex flex-col gap-8 px-12">
-      <div className="p-4">
-        <Image
-          src={"https://dev.sky.trade/images/logo-1.svg"}
-          alt="Company's logo"
-          width={199}
-          height={77}
-        />
+    <Suspense>
+      <div className="flex flex-col gap-8 px-12">
+        <div className="p-4">
+          <Image
+            src={"https://dev.sky.trade/images/logo-1.svg"}
+            alt="Company's logo"
+            width={199}
+            height={77}
+          />
+        </div>
+        <p>Web3auth Status: {web3auth?.status}</p>
       </div>
-      <p>Web3auth Status: {web3auth?.status}</p>
-    </div>
+    </Suspense>
   );
 }
