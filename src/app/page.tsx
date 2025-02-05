@@ -17,7 +17,12 @@ import { shallowEqual } from "react-redux";
 
 export default function Home() {
   useInitAuth();
-  useSFAAuthCheck();
+  // Read the token from the URL
+  const searchParams = useSearchParams();
+  const token = searchParams.get("token");
+
+  // Pass token to the hook
+  useSFAAuthCheck(token);
 
   const { web3auth, provider, setProvider } = useContext(Web3authContext);
   const [accounts, setAccounts] = useState("");

@@ -1,17 +1,16 @@
 "use client";
-import { useEffect, useContext, useState } from "react";
+import { useEffect, useContext } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { decodeToken } from "@web3auth/single-factor-auth";
 import { Web3authContext } from "@/providers/web3authProvider";
 import { toast } from "react-toastify";
 import UserService from "@/services/UserService";
-import { useRouter, useSearchParams } from "next/navigation";
 import useInitAuth from "./useInitAuth";
 import useAuth from "./useAuth";
 import { useAppDispatch } from "@/redux/store";
 import { setEmail, setIsCheckingSFA } from "@/redux/slices/userSlice";
 
-const useSFAAuthCheck = () => {
+const useSFAAuthCheck = (idToken: string | null) => {
   const dispatch = useAppDispatch();
   useInitAuth();
 
@@ -19,8 +18,6 @@ const useSFAAuthCheck = () => {
   const { web3auth, provider, setProvider } = useContext(Web3authContext);
   const { getUser } = UserService();
   const { handleUserNotFound } = useAuth();
-
-  const [idToken, setIdToken] = useState<string | null>(null);
 
   useEffect(() => {
     const connectToSFA = async () => {
@@ -79,15 +76,6 @@ const useSFAAuthCheck = () => {
     };
     if (user) connectToSFA();
   }, [user, web3auth]);
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      // Parse the current URL's query string
-      const params = new URLSearchParams(window.location.search);
-      const _token = params.get("token");
-      setIdToken(_token);
-    }
-  }, []);
 };
 
 export default useSFAAuthCheck;
