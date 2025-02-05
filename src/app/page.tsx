@@ -12,6 +12,8 @@ import UserService from "@/services/UserService";
 import useInitAuth from "@/hooks/useInitAuth";
 import { SolanaWallet } from "@web3auth/solana-provider";
 import useAuth from "@/hooks/useAuth";
+import { useAppSelector } from "@/redux/store";
+import { shallowEqual } from "react-redux";
 
 export default function Home() {
   useInitAuth();
@@ -20,6 +22,13 @@ export default function Home() {
   const { web3auth, provider, setProvider } = useContext(Web3authContext);
   const [accounts, setAccounts] = useState("");
   const { user } = useAuth0();
+
+  const { email } = useAppSelector((state) => {
+    const { email } = state.userReducer;
+    return {
+      email,
+    };
+  }, shallowEqual);
 
   const getAccounts = async () => {
     if (provider) {
@@ -54,7 +63,7 @@ export default function Home() {
           Web3auth Status:{" "}
           {web3auth?.status ? web3auth?.status : "disconnected"}
         </p>
-        {user && <p>User: {user.email}</p>}
+        {email && <p>User: {email}</p>}
         {accounts && <p>Generated Wallet: {accounts}</p>}
       </div>
     </Suspense>

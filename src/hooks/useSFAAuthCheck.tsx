@@ -8,7 +8,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import useInitAuth from "./useInitAuth";
 import useAuth from "./useAuth";
 import { useAppDispatch } from "@/redux/store";
-import { setIsCheckingSFA } from "@/redux/slices/userSlice";
+import { setEmail, setIsCheckingSFA } from "@/redux/slices/userSlice";
 
 const useSFAAuthCheck = () => {
   const dispatch = useAppDispatch();
@@ -35,6 +35,10 @@ const useSFAAuthCheck = () => {
         // Decode token to get user info
         const { payload } = decodeToken(idToken);
         console.log({ idToken });
+        if (payload) {
+          //@ts-ignore
+          dispatch(setEmail(payload.email));
+        }
 
         //@ts-ignore
         if (payload && !payload.email_verified) {

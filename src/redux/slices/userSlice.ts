@@ -15,6 +15,7 @@ interface UserState {
 
   priceRange: number[];
   endDate: string | null;
+  email: string | null;
   minSalePrice: number | null;
   assetId: string;
   toggleRequest: boolean;
@@ -44,6 +45,7 @@ const initialState: UserState = {
 
   priceRange: [0, 0],
   endDate: null,
+  email: null,
   minSalePrice: null,
   assetId: "",
   toggleRequest: false,
@@ -86,6 +88,9 @@ const userSlice: Slice<UserState> = createSlice({
     },
     setEndDate: (state, action: PayloadAction<string | null>) => {
       state.endDate = action.payload;
+    },
+    setEmail: (state, action: PayloadAction<string | null>) => {
+      state.email = action.payload;
     },
     setMinSalePrice: (state, action: PayloadAction<number>) => {
       state.minSalePrice = action.payload;
@@ -166,5 +171,6 @@ export const {
   setPendingNotificationsCount,
   setIsFetchingNotifications,
   setIsCheckingSFA,
+  setEmail,
 } = userSlice.actions;
 export default userSlice.reducer;
