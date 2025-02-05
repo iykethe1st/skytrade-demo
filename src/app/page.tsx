@@ -16,8 +16,10 @@ import { useAppSelector } from "@/redux/store";
 import { shallowEqual } from "react-redux";
 
 export default function Home() {
+  const searchParams = useSearchParams();
+  const token = searchParams.get("token");
   useInitAuth();
-  useSFAAuthCheck();
+  useSFAAuthCheck(token);
 
   const { web3auth, provider, setProvider } = useContext(Web3authContext);
   const [accounts, setAccounts] = useState("");

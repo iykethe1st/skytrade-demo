@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useContext } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { decodeToken } from "@web3auth/single-factor-auth";
@@ -10,7 +11,7 @@ import useAuth from "./useAuth";
 import { useAppDispatch } from "@/redux/store";
 import { setEmail, setIsCheckingSFA } from "@/redux/slices/userSlice";
 
-const useSFAAuthCheck = () => {
+const useSFAAuthCheck = (idToken: string | null) => {
   const dispatch = useAppDispatch();
   useInitAuth();
 
@@ -18,7 +19,6 @@ const useSFAAuthCheck = () => {
   const { web3auth, provider, setProvider } = useContext(Web3authContext);
   const { getUser } = UserService();
   const { handleUserNotFound } = useAuth();
-  const params = useSearchParams();
 
   useEffect(() => {
     const connectToSFA = async () => {
@@ -26,7 +26,7 @@ const useSFAAuthCheck = () => {
 
       try {
         // Get the Auth0 ID token
-        const idToken = params.get("token");
+
         if (!idToken) {
           console.error("No Auth0 ID token found");
           return;
