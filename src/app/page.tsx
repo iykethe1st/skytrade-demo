@@ -12,8 +12,7 @@ import UserService from "@/services/UserService";
 import useInitAuth from "@/hooks/useInitAuth";
 
 export default function Home() {
-  useInitAuth();
-  const params = useSearchParams();
+  // useInitAuth();
   const { loginWithRedirect } = useAuth0();
   const [isNewsletterChecked, setIsNewsletterChecked] = useState(false);
   const [isLogin, setIsLogin] = useState(true);
@@ -22,6 +21,8 @@ export default function Home() {
   const { getUser } = UserService();
   // useSFAAuthCheck();
   const connectToSFA = async () => {
+    const params = useSearchParams();
+
     const token = params.get("token");
     try {
       // Get the Auth0 ID token
