@@ -26,7 +26,7 @@ export default function Home() {
       try {
         const solanaWallet = new SolanaWallet(provider);
 
-        const accounts = await solanaWallet.requestAccounts();
+        const accounts = await solanaWallet?.requestAccounts();
         console.log("Solana public key(s):", accounts);
         setAccounts(accounts[0]);
         // If it returns an array, typically the first index [0] is your main public key
