@@ -757,9 +757,9 @@
     picomatch "^4.0.2"
 
 "@rollup/rollup-linux-x64-gnu@^4.24.4", "@rollup/rollup-linux-x64-gnu@^4.28.0", "@rollup/rollup-linux-x64-gnu@^4.28.1":
-  version "4.34.2"
-  resolved "https://registry.yarnpkg.com/@rollup/rollup-linux-x64-gnu/-/rollup-linux-x64-gnu-4.34.2.tgz#2a59f28be83f134f600c9bc41f7a343e29d7ab80"
-  integrity sha512-j+jFdfOycLIQ7FWKka9Zd3qvsIyugg5LeZuHF6kFlXo6MSOc6R1w37YUVy8VpAKd81LMWGi5g9J25P09M0SSIw==
+  version "4.34.3"
+  resolved "https://registry.yarnpkg.com/@rollup/rollup-linux-x64-gnu/-/rollup-linux-x64-gnu-4.34.3.tgz#017bb2808665d69ba55740cae02708ea8cb45885"
+  integrity sha512-lOyG3aF4FTKrhpzXfMmBXgeKUUXdAWmP2zSNf8HTAXPqZay6QYT26l64hVizBjq+hJx3pl0DTEyvPi9sTA6VGA==
 
 "@scure/base@~1.1.0", "@scure/base@~1.1.6":
   version "1.1.9"
@@ -1035,19 +1035,19 @@
   resolved "https://registry.yarnpkg.com/@socket.io/component-emitter/-/component-emitter-3.1.2.tgz#821f8442f4175d8f0467b9daf26e3a18e2d02af2"
   integrity sha512-9BCxFwvbGg/RsZK9tjXd8s4UcwR0MWeFQ1XEKIQVVvAGJyINdrqKMcTRyLoK8Rse1GjzLV9cwjWV1olXRWEXVA==
 
-"@solana-mobile/mobile-wallet-adapter-protocol-web3js@^2.1.4":
-  version "2.1.4"
-  resolved "https://registry.yarnpkg.com/@solana-mobile/mobile-wallet-adapter-protocol-web3js/-/mobile-wallet-adapter-protocol-web3js-2.1.4.tgz#70b55f2dc62740f0a0fb445103f414ec63ef387d"
-  integrity sha512-eE0NfQ450TrjD20/gN9hDYLhm6ggYtA5Vrrp3kuzj2antC0t6UtCCHe3/ivHLU14ir6kPoQTsTJHQaKGIqcheQ==
+"@solana-mobile/mobile-wallet-adapter-protocol-web3js@^2.1.5":
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/@solana-mobile/mobile-wallet-adapter-protocol-web3js/-/mobile-wallet-adapter-protocol-web3js-2.1.5.tgz#543a6b86f2961fc499019b6748a887393eb4e0c1"
+  integrity sha512-2EQpnlnZSlp9galzYP0saHBLTQrI8PMILMjDbu9VzNx97Q3M6tXhgIOppyshp0Wj4AR9SMteoxtLHeplz6U/Ww==
   dependencies:
-    "@solana-mobile/mobile-wallet-adapter-protocol" "^2.1.4"
+    "@solana-mobile/mobile-wallet-adapter-protocol" "^2.1.5"
     bs58 "^5.0.0"
     js-base64 "^3.7.5"
 
-"@solana-mobile/mobile-wallet-adapter-protocol@^2.1.4":
-  version "2.1.4"
-  resolved "https://registry.yarnpkg.com/@solana-mobile/mobile-wallet-adapter-protocol/-/mobile-wallet-adapter-protocol-2.1.4.tgz#47f31e230aca8500b8715fe68ce0be59e5401851"
-  integrity sha512-o5C61cZbtvkuAyn5YxRxsl8jeTVpGO40xT7VjtgFSE9elxvLOZAlqxxrtxpqT4hiwFzQFDzjUGsp97cabij06A==
+"@solana-mobile/mobile-wallet-adapter-protocol@^2.1.5":
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/@solana-mobile/mobile-wallet-adapter-protocol/-/mobile-wallet-adapter-protocol-2.1.5.tgz#fcc0dc1439f0d3c59f0245f97706b6425755deed"
+  integrity sha512-Nn+3cmM2uGmK38XzQY0C3Ic4orGi7olE67n3sjTVi1qiWNjLbZ0mvYAXoZnHC3vZMBQvgjfUWW69DZrMgn7Euw==
   dependencies:
     "@solana/wallet-standard" "^1.1.2"
     "@solana/wallet-standard-util" "^1.1.1"
@@ -1055,11 +1055,11 @@
     js-base64 "^3.7.5"
 
 "@solana-mobile/wallet-adapter-mobile@^2.0.0":
-  version "2.1.4"
-  resolved "https://registry.yarnpkg.com/@solana-mobile/wallet-adapter-mobile/-/wallet-adapter-mobile-2.1.4.tgz#d9b5c3d0480dadc344a6019182eb756cfb014cb8"
-  integrity sha512-uOG7Jqrjlcf52OyNfguv1CD29zQrUB5YbPhBOv6n/BcS0Zd9jHvcB0J9iMt5EZ6P8MYdJ898L6X1+4mnqFFixg==
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/@solana-mobile/wallet-adapter-mobile/-/wallet-adapter-mobile-2.1.5.tgz#ab2ddfaf9fab4a3d7d1c558ad6f12488cf68855c"
+  integrity sha512-gCcCnC/9HtBS1v1P4/rs/1Ait73I0tqd0XELaodZf+Or5Y4nOk2G1yhpzLNb+SCHJ1eO1dPm+7Cyf6XxRAMacA==
   dependencies:
-    "@solana-mobile/mobile-wallet-adapter-protocol-web3js" "^2.1.4"
+    "@solana-mobile/mobile-wallet-adapter-protocol-web3js" "^2.1.5"
     "@solana/wallet-adapter-base" "^0.9.23"
     "@solana/wallet-standard-features" "^1.2.0"
     js-base64 "^3.7.5"
@@ -1298,22 +1298,7 @@
   dependencies:
     tslib "^2.8.0"
 
-"@toruslabs/base-controllers@^6.3.2":
-  version "6.3.2"
-  resolved "https://registry.yarnpkg.com/@toruslabs/base-controllers/-/base-controllers-6.3.2.tgz#570d0889d0a42ce032e99069396ae4243fe50b41"
-  integrity sha512-YnRAtEM9jVR71ZDPSJtb1P1biAz322hv9R3jKh7SttfI//JPvtw8UdSCCQjSF5cAWLqgOupqq15p+p9Ka0bSPA==
-  dependencies:
-    "@ethereumjs/util" "^9.1.0"
-    "@toruslabs/broadcast-channel" "^11.0.0"
-    "@toruslabs/http-helpers" "^7.0.0"
-    "@web3auth/auth" "^9.5.2"
-    async-mutex "^0.5.0"
-    bignumber.js "^9.1.2"
-    bowser "^2.11.0"
-    jwt-decode "^4.0.0"
-    loglevel "^1.9.2"
-
-"@toruslabs/base-controllers@^6.3.3":
+"@toruslabs/base-controllers@^6.3.2", "@toruslabs/base-controllers@^6.3.3":
   version "6.3.3"
   resolved "https://registry.yarnpkg.com/@toruslabs/base-controllers/-/base-controllers-6.3.3.tgz#45f808282df5d1efc312eb1c40963f74bd0bd810"
   integrity sha512-za1QD4jADtSWFMYVDZ9YZJMxzoBtT0T/SWkmQECOiAVtlUQgPn9naIqzc1ApBYdzwp9GUaxe4P1510R+5I/Ncg==
@@ -1329,14 +1314,14 @@
     loglevel "^1.9.2"
 
 "@toruslabs/base-controllers@^7.1.1":
-  version "7.1.1"
-  resolved "https://registry.yarnpkg.com/@toruslabs/base-controllers/-/base-controllers-7.1.1.tgz#6cdd8e155d40ae0b73bd67a748df68efbfec20f1"
-  integrity sha512-dVs+9CyQmM18EBdeo0d0dOqejW21qudcAJKEP6Ayq6yOisVwHoVz1rqbs/TTTN+8avHoTKMN7pHLEGVA845CWw==
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/@toruslabs/base-controllers/-/base-controllers-7.2.0.tgz#5651575a1e69462ddd7b18b3de20a91eccfec7f2"
+  integrity sha512-T+499zBpLx+1IOPNbSzNU/pL2hn40kpUkpKF7GDKKpGelx8COFC/ioxKPWMfvnqDK/Fgv7Owet+lpxid5HXzAQ==
   dependencies:
     "@ethereumjs/util" "^9.1.0"
     "@toruslabs/broadcast-channel" "^11.0.0"
     "@toruslabs/http-helpers" "^7.0.0"
-    "@web3auth/auth" "^9.6.2"
+    "@web3auth/auth" "^9.6.4"
     async-mutex "^0.5.0"
     bignumber.js "^9.1.2"
     bowser "^2.11.0"
@@ -1650,7 +1635,7 @@
   dependencies:
     "@wallet-standard/base" "^1.1.0"
 
-"@web3auth/auth@^9.5.2", "@web3auth/auth@^9.5.3", "@web3auth/auth@^9.6.2", "@web3auth/auth@^9.6.4":
+"@web3auth/auth@^9.5.2", "@web3auth/auth@^9.5.3", "@web3auth/auth@^9.6.4":
   version "9.6.4"
   resolved "https://registry.yarnpkg.com/@web3auth/auth/-/auth-9.6.4.tgz#1e9dde38b0b1caec0d3175012e5e7488d2df779f"
   integrity sha512-Y1Swyg8mWCuSt93AY3AZIAwCC/WoaxTD6dYOW/A8j6srUOqiHtM2Dr/EvnhPoqOF1QYlA+0nzrwA/Vr/HYD0aw==
@@ -2305,9 +2290,9 @@ eastasianwidth@^0.2.0:
   integrity sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==
 
 electron-to-chromium@^1.5.73:
-  version "1.5.91"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.91.tgz#cf5567f6853062493242133aefd4dc8dc8440abd"
-  integrity sha512-sNSHHyq048PFmZY4S90ax61q+gLCs0X0YmcOII9wG9S2XwbVr+h4VW2wWhnbp/Eys3cCwTxVF292W3qPaxIapQ==
+  version "1.5.92"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.92.tgz#81e8ebe06f8e2a49fdba84bd10e9ad5b63efffe0"
+  integrity sha512-BeHgmNobs05N1HMmMZ7YIuHfYBGlq/UmvlsTgg+fsbFs9xVMj+xJHFg19GN04+9Q+r8Xnh9LXqaYIyEWElnNgQ==
 
 elliptic@^6.5.4, elliptic@^6.5.5, elliptic@^6.5.7, elliptic@^6.6.1:
   version "6.6.1"
