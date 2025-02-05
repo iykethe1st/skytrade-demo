@@ -5,12 +5,13 @@ import { decodeToken } from "@web3auth/single-factor-auth";
 import { Web3authContext } from "@/providers/web3authProvider";
 import { toast } from "react-toastify";
 import UserService from "@/services/UserService";
+import { useRouter, useSearchParams } from "next/navigation";
 import useInitAuth from "./useInitAuth";
 import useAuth from "./useAuth";
 import { useAppDispatch } from "@/redux/store";
 import { setEmail, setIsCheckingSFA } from "@/redux/slices/userSlice";
 
-const useSFAAuthCheck = (idToken: string | null) => {
+const useSFAAuthCheck = () => {
   const dispatch = useAppDispatch();
   useInitAuth();
 
@@ -18,6 +19,7 @@ const useSFAAuthCheck = (idToken: string | null) => {
   const { web3auth, provider, setProvider } = useContext(Web3authContext);
   const { getUser } = UserService();
   const { handleUserNotFound } = useAuth();
+  const params = useSearchParams();
 
   useEffect(() => {
     const connectToSFA = async () => {
@@ -25,7 +27,7 @@ const useSFAAuthCheck = (idToken: string | null) => {
 
       try {
         // Get the Auth0 ID token
-
+        const idToken = params.get("token");
         if (!idToken) {
           console.error("No Auth0 ID token found");
           return;
