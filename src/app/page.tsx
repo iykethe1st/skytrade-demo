@@ -17,9 +17,7 @@ import { shallowEqual } from "react-redux";
 
 export default function Home() {
   useInitAuth();
-  const searchParams = useSearchParams();
-  const token = searchParams.get("token");
-  useSFAAuthCheck(token);
+  useSFAAuthCheck();
 
   const { web3auth, provider, setProvider } = useContext(Web3authContext);
   const [accounts, setAccounts] = useState("");
@@ -51,7 +49,7 @@ export default function Home() {
     getAccounts();
   }, [provider]);
   return (
-    <Suspense fallback={<div>Checking credentials...</div>}>
+    <Suspense fallback={<div>Loading...</div>}>
       <div className="flex flex-col gap-8 px-12">
         <div className="p-4">
           <Image
@@ -65,7 +63,7 @@ export default function Home() {
           Web3auth Status:{" "}
           {web3auth?.status ? web3auth?.status : "disconnected"}
         </p>
-        {email && <p>User: {email}</p>}
+        {user && <p>User: {email}</p>}
         {accounts && <p>Generated Wallet: {accounts}</p>}
       </div>
     </Suspense>
