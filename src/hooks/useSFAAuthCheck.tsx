@@ -4,7 +4,7 @@ import { decodeToken } from "@web3auth/single-factor-auth";
 import { Web3authContext } from "@/providers/web3authProvider";
 import { toast } from "react-toastify";
 import UserService from "@/services/UserService";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import useInitAuth from "./useInitAuth";
 import useAuth from "./useAuth";
 import { useAppDispatch } from "@/redux/store";
@@ -18,6 +18,7 @@ const useSFAAuthCheck = () => {
   const { web3auth, provider, setProvider } = useContext(Web3authContext);
   const { getUser } = UserService();
   const { handleUserNotFound } = useAuth();
+  const params = useSearchParams();
 
   useEffect(() => {
     const connectToSFA = async () => {
@@ -25,7 +26,7 @@ const useSFAAuthCheck = () => {
 
       try {
         // Get the Auth0 ID token
-        const idToken = (await getIdTokenClaims())?.__raw;
+        const idToken = params.get("token");
         if (!idToken) {
           console.error("No Auth0 ID token found");
           return;
