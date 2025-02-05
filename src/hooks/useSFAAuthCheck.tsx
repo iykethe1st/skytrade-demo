@@ -1,4 +1,4 @@
-"use client";
+"use";
 import { useEffect, useContext } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { decodeToken } from "@web3auth/single-factor-auth";

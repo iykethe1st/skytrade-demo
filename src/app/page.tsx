@@ -17,8 +17,6 @@ import { shallowEqual } from "react-redux";
 
 export default function Home() {
   useInitAuth();
-
-  // Pass token to the hook
   useSFAAuthCheck();
 
   const { web3auth, provider, setProvider } = useContext(Web3authContext);
@@ -51,20 +49,23 @@ export default function Home() {
     getAccounts();
   }, [provider]);
   return (
-    <div className="flex flex-col gap-8 px-12">
-      <div className="p-4">
-        <Image
-          src={"https://dev.sky.trade/images/logo-1.svg"}
-          alt="Company's logo"
-          width={199}
-          height={77}
-        />
+    <Suspense fallback={<div>Loading...</div>}>
+      <div className="flex flex-col gap-8 px-12">
+        <div className="p-4">
+          <Image
+            src={"https://dev.sky.trade/images/logo-1.svg"}
+            alt="Company's logo"
+            width={199}
+            height={77}
+          />
+        </div>
+        <p>
+          Web3auth Status:{" "}
+          {web3auth?.status ? web3auth?.status : "disconnected"}
+        </p>
+        {user && <p>User: {email}</p>}
+        {accounts && <p>Generated Wallet: {accounts}</p>}
       </div>
-      <p>
-        Web3auth Status: {web3auth?.status ? web3auth?.status : "disconnected"}
-      </p>
-      {user && <p>User: {email}</p>}
-      {accounts && <p>Generated Wallet: {accounts}</p>}
-    </div>
+    </Suspense>
   );
 }
