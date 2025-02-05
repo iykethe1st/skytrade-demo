@@ -16,9 +16,9 @@ import { useAppSelector } from "@/redux/store";
 import { shallowEqual } from "react-redux";
 
 export default function Home() {
+  useInitAuth();
   const searchParams = useSearchParams();
   const token = searchParams.get("token");
-  useInitAuth();
   useSFAAuthCheck(token);
 
   const { web3auth, provider, setProvider } = useContext(Web3authContext);
@@ -51,7 +51,7 @@ export default function Home() {
     getAccounts();
   }, [provider]);
   return (
-    <Suspense>
+    <Suspense fallback={<div>Checking credentials...</div>}>
       <div className="flex flex-col gap-8 px-12">
         <div className="p-4">
           <Image
