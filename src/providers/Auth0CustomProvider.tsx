@@ -3,6 +3,7 @@
 import React from "react";
 
 import { Auth0Provider } from "@auth0/auth0-react";
+import useInitAuth from "@/hooks/useInitAuth";
 
 type GoogleAuthProviderProps = {
   children: React.ReactNode;

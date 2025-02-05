@@ -43,7 +43,7 @@ const UserService = () => {
     const resData = await getRequest({
       uri: `/private/users/session`,
     });
-    if (resData.status === 200) {
+    if (resData?.status === 200) {
       return {
         error: false,
         data: resData?.data,

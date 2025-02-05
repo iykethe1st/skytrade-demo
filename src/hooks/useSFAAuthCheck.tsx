@@ -49,7 +49,7 @@ const useSFAAuthCheck = () => {
           },
         ];
 
-        const providerFromSFA = await web3auth.connect({
+        const providerFromSFA = await web3auth?.connect({
           verifier: process.env.NEXT_PUBLIC_VERIFIER,
           verifierId: (payload as any).email,
           idToken,
@@ -71,7 +71,7 @@ const useSFAAuthCheck = () => {
       }
     };
     if (user) connectToSFA();
-  }, [user]);
+  }, [user, web3auth]);
 };
 
 export default useSFAAuthCheck;
